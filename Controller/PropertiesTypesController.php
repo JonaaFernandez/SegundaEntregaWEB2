@@ -18,23 +18,6 @@ class PropertiesTypesController{
         $this->cont = new UserController();
     }
 
-   /*   private function checklogueado(){
- 
-        if (!isset($_SESSION['USERNAME'])){
-        header("Location: " . LOGIN);
-        die();
-        }else{
-            if ( isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 190)) { 
-               
-                $this->cont->LogOut();
-
-            }
-            $_SESSION['LAST_ACTIVITY'] = time();
-        } 
-    } */
-
-
-
    function showAll(){
         $types = $this->model->GetAll();
         $log = $this->cont->checklogueado();
@@ -77,7 +60,6 @@ class PropertiesTypesController{
 
 
     function delete($params = null){
-        /* DUDAS SI EN SHOW LIST LOCATION TAMBIEN VAN LOS PARAMETROS */
         $log = $this->cont->checklogueado();
         $user = $this->cont->admin();
         $registrado = $this->cont->registrado();
